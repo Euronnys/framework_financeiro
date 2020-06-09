@@ -231,24 +231,16 @@ function cadUsuario(){
    }
 
  listarUsuarios();
-
-
-
-
   
- /*const Toast = Swal.mixin({
-  toast: true,
-  showConfirmButton: false,
-  timer: 3000,
-  timerProgressBar: true,
-  onOpen: (toast) => {
-    toast.addEventListener('mouseenter', Swal.stopTimer);
-    toast.addEventListener('mouseleave', Swal.resumeTimer);
-    listarUsuarios();
-  }
-})
+ function adm(){
+  const email = document.getElementById("email").value;
+  const senha = document.getElementById("senha").value;
+  let usuariosGravados = JSON.parse(window.localStorage.getItem("usuarios"));
+  let usuarioIndex = usuariosGravados.findIndex(usuario => usuario.email === email);
+if(usuariosGravados[usuarioIndex].senha == "admin"){
+window.location.href="https://www.youtube.com/"
 
-Toast.fire({
-  icon: 'success',
-  title: 'Usuário Cadastrado com Sucesso!!!'
-});*/
+}else{
+  logar();
+}
+ }

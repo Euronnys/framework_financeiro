@@ -125,7 +125,11 @@ function apagarUsuario(id){
   });
 }
 
+
+
+
 function logar(){
+ 
   const email = document.getElementById("email").value;
   const senha = document.getElementById("senha").value;
 
@@ -133,6 +137,8 @@ function logar(){
   let usuariosGravados = JSON.parse(window.localStorage.getItem("usuarios"));
   //console.log(usuariosGravados);
   let usuarioIndex = usuariosGravados.findIndex(usuario => usuario.email === email);
+ 
+  
   if(usuarioIndex === -1){ // não tem email cadastrado
     Swal.fire({
     
@@ -151,6 +157,7 @@ function logar(){
             timer: 1500
           });
         }else{ // email e senha validados corretos
+         
           const Toast = Swal.mixin({
             toast: true,
             position: 'top-end',
@@ -170,7 +177,19 @@ function logar(){
         }
   }
   
+
+
+
+
+
+
+
+
+
 }
+
+
+
 
 function limpar(){
   /* limpar de forma basica manual
